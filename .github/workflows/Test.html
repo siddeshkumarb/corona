@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head> </head>
+<body>
+<form action="#">
+    <details>
+        <summary>Customer</summary>
+        <ul>
+            <li>
+				<details>
+					<summary>
+						<input type="checkbox" id="custCountry" name="customer" onChange="myFunction()"  value="Country" autocomplete="off">Country </input>
+					</summary>
+							<ul><li>
+								<input type="checkbox" id="custState" name="customer" onChange="myFunction()" value="Customer state" autocomplete="off">Customer state</input>
+							</li><li>
+								<input type="checkbox" id="custDirstict" name="customer" onChange="myFunction()" value = 'Customer Dirstict' autocomplete="off">Customer Dirstict</input>
+							</li>
+							<li>
+								<input type="checkbox" id="custArea" name="customer" onChange="myFunction()"  value = 'Customer area' autocomplete="off">Customer area</input>
+							</li>
+							</ul>
+                </details>
+			</li>
+			<li>
+                    <input type="checkbox" id="custPhone" name="customer" onChange="myFunction()" value= 'Sales Phone' >Sales Phone</input>
+            </li>
+		</ul>    
+    </details>
+<br><br>
+<br><br>
+Selected Items:  
+<input type="text" id="order" size="50">
+<input type="submit" onClick="myAction()" value="Submit">
+</form>
+
+</html>
+
+<script>
+  var customer = "";
+  document.getElementById("order").value = "";
+  var txt = "";
+function myFunction() {
+  customer = document.forms[0];
+  var i;
+  for (i = 0; i < customer.length; i++) {
+    if (customer[i].checked) {
+      txt = txt + customer[i].value + ", ";
+    }
+  }
+  document.getElementById("order").value = "" + txt;
+}
+
+function myAction() {
+	alert(txt);
+}
+
+  </script>
